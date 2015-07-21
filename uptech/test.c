@@ -24,8 +24,8 @@
 /************************** PRIVATE DEFINITIONS *************************/
 
 /*****GPIO pin define**************************************/
-#define PA_4      0xA, 4             //FUNC4: GPIO5[19]
-#define LED1      5, (1<<19)         //GPIO5[19]
+#define PA_4      0xE, 14             //FUNC4: GPIO5[19]
+#define LED1      7, (1<<14)         //GPIO5[19]
 
 /*****gpio input/output mode define************************/
 #define INPUT_MODE       0
@@ -43,6 +43,7 @@ uint8_t welcome[] =
 "I am Tested. \n\r"
 "By Dubuqingfeng \n\r"
 "*************************************************\n\r";
+uint32_t flag = 0;
 //timer init
 TIM_TIMERCFG_Type TIM_ConfigStruct;
 TIM_MATCHCFG_Type TIM_MatchConfigStruct;
@@ -99,7 +100,7 @@ void Timers_init(void)
 	//Toggle MR0.0 pin if MR0 matches it
 	TIM_MatchConfigStruct.ExtMatchOutputType =TIM_EXTMATCH_TOGGLE;
 	// Set Match value, count value of 10000 (10000 * 100uS = 1000mS --> 1Hz)
-	TIM_MatchConfigStruct.MatchValue   = 10000;
+	TIM_MatchConfigStruct.MatchValue   = 200000;
 
 	// Set configuration for Tim_config and Tim_MatchConfig
 	TIM_Init(LPC_TIMER0, TIM_TIMER_MODE,&TIM_ConfigStruct);
@@ -113,12 +114,25 @@ void Timers_init(void)
  **********************************************************************/
 void TIMER0_IRQHandler(void)
 {
-	//TIM_ClearIntPending
+      _DBG_("Match a occur..");
+      //while (!(TIM_GetIntStatus(LPC_TIMER0,TIM_MR0_INT)));
+      
       TIM_ClearIntPending(LPC_TIMER0,(TIM_INT_TYPE)0);
-      GPIO_SetValue(LED1);
-      _DBG_("Match interrupt occur..");
-      delay(3000);
-      GPIO_ClearValue(LED1);
+      if(flag == 0)
+      {
+        GPIO_SetValue(LED1);
+        TIM_UpdateMatchValue(LPC_TIMER0,0,5000);
+        flag = 1;
+        delay(5000);
+        GPIO_ClearValue(LED1);
+      }
+      else
+      {
+        TIM_UpdateMatchValue(LPC_TIMER0,0,195000);
+        flag = 0;
+        GPIO_ClearValue(LED1);
+      }
+      
 }
 
 void delay(uint32_t n)
@@ -126,7 +140,7 @@ void delay(uint32_t n)
   uint32_t i;
   while(n--)
   {
-    i = 1000;
+    i = 100;
     while(i--);
   }
 }
