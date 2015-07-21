@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_news_left"
+    android:paddingRight="@dimen/activity_news_right"
+    android:paddingTop="@dimen/activity_news_top"
+    android:paddingBottom="@dimen/activity_news_bottom"
+    tools:context="com.digdream.androidrubiksolver.ui.NewsActivity$PlaceholderFragment">
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        </WebView>
+
+</RelativeLayout>
