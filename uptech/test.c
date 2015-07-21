@@ -106,8 +106,14 @@ void Timers_init(void)
 	TIM_ConfigMatch(LPC_TIMER0,&TIM_MatchConfigStruct);
 }
 
+/*********************************************************************//**
+ * @brief		Timer0_IRQ
+ * @param[in]	None
+ * @return 		None
+ **********************************************************************/
 void TIMER0_IRQHandler(void)
 {
+	//TIM_ClearIntPending
       TIM_ClearIntPending(LPC_TIM0,0);
       GPIO_SetValue(LED1);
       GPIO_ClearValue(LED1);
@@ -137,11 +143,11 @@ int c_entry (void) {                       /* Main Program                      
 	CGU_Init();
 
 	/* Initialize debug via UART0
-	 * ?115200bps
-	 * ?8 data bit
-	 * ?No parity
-	 * ?1 stop bit
-	 * ?No flow control
+	 * 115200bps
+	 * 8 data bit
+	 * No parity
+	 * 1 stop bit
+	 * No flow control
 	 */
 	debug_frmwrk_init();
 
