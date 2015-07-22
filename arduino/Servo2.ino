@@ -18,10 +18,10 @@ void setup() {
   Serial.begin(115200);
   Serial.flush();
   initServoAngle();
-  Serial.println("=======================================");
-  Serial.println("=Hello,I'm a RubikSolverRobot,I'm from SXAU.");
-  Serial.println("=By Dubuqingfeng...");
-  Serial.println("=======================================");
+  Serial.println("==============================================");
+  Serial.println("=Hello,I'm a RubikSolverRobot,I'm from SXAU. =");
+  Serial.println("=By Dubuqingfeng...                          =");
+  Serial.println("==============================================");
 }
 
 void loop() {
@@ -209,41 +209,41 @@ void setServo(char* data) {
     //r- l+
     if (data[1] == '+') {
       rotateWholexMinus();
-      servo1f.write(180);
+      servo1f.writeMicroseconds(2500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       rotateWholex();
     } else if (data[1] == '-') {
       rotateWholexMinus();
-      servo1f.write(10);
+      servo1f.writeMicroseconds(500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       rotateWholex();
     } else if (data[1] == '2') {
       rotateWholexMinus();
-      servo1f.write(180);
+      servo1f.writeMicroseconds(2500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       delay(1000);
-      servo1f.write(180);
+      servo1f.writeMicroseconds(2500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       rotateWholex();
     }
   } else if ((data[0] == 'F') || (data[0] == 'f')) {
@@ -318,83 +318,83 @@ void setServo(char* data) {
     //r- l+
     if (data[1] == '+') {
       rotateWholex();
-      servo1f.write(170);
+      servo1f.writeMicroseconds(2500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       rotateWholexMinus();
     } else if (data[1] == '-') {
       rotateWholex();
-      servo1f.write(10);
+      servo1f.writeMicroseconds(500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       rotateWholexMinus();
     } else if (data[1] == '2') {
       rotateWholex();
-      servo1f.write(170);
+      servo1f.writeMicroseconds(2500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       delay(1000);
-      servo1f.write(170);
+      servo1f.writeMicroseconds(2500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       rotateWholexMinus();
     }
   }
 }
 
 void rotateWholexMinus(){
-  servo1b.write(0);
-  servo3b.write(0);
+  servo1b.writeMicroseconds(500);
+  servo3b.writeMicroseconds(500);
   delay(500);
-  servo4f.write(10);
-  servo2f.write(170);
+  servo4f.writeMicroseconds(500);
+  servo2f.writeMicroseconds(2500);
   delay(500);
-  servo1b.write(100);
-  servo3b.write(100);
+  servo1b.writeMicroseconds(1500);
+  servo3b.writeMicroseconds(1500);
   delay(500);
-  servo4b.write(0);
-  servo2b.write(0);
+  servo4b.writeMicroseconds(500);
+  servo2b.writeMicroseconds(500);
   delay(500);
-  servo4f.write(90);
-  servo2f.write(84);
+  servo4f.writeMicroseconds(1500);
+  servo2f.writeMicroseconds(1500);
   delay(500);
-  servo4b.write(100);
-  servo2b.write(100);
+  servo4b.writeMicroseconds(1500);
+  servo2b.writeMicroseconds(1500);
   delay(500);
 }
 void rotateWholex(){
-  servo1b.write(0);
-  servo3b.write(0);
+  servo1b.writeMicroseconds(500);
+  servo3b.writeMicroseconds(500);
   delay(500);
-  servo4f.write(170);
-  servo2f.write(10);
+  servo4f.writeMicroseconds(2500);
+  servo2f.writeMicroseconds(500);
   delay(500);
-  servo1b.write(100);
-  servo3b.write(100);
+  servo1b.writeMicroseconds(1500);
+  servo3b.writeMicroseconds(1500);
   delay(500);
-  servo4b.write(0);
-  servo2b.write(0);
+  servo4b.writeMicroseconds(500);
+  servo2b.writeMicroseconds(500);
   delay(500);
-  servo4f.write(90);
-  servo2f.write(84);
+  servo4f.writeMicroseconds(1500);
+  servo2f.writeMicroseconds(1500);
   delay(500);
-  servo4b.write(100);
-  servo2b.write(100);
+  servo4b.writeMicroseconds(1500);
+  servo2b.writeMicroseconds(1500);
   delay(500);
 }
