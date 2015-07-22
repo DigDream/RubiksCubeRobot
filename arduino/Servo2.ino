@@ -106,20 +106,20 @@ void setServoCommand(char* data) {
     servo4b.writeMicroseconds(500);
   } else if ((data[0] == 'F') || (data[0] == 'f' )) {
     //Back servos forward
-    servo1b.write(100);
-    servo2b.write(100);
-    servo3b.write(100);
-    servo4b.write(100);
+    servo1b.writeMicroseconds(1500);
+    servo2b.writeMicroseconds(1500);
+    servo3b.writeMicroseconds(1500);
+    servo4b.writeMicroseconds(1500);
   } else if ((data[0] == 'U') || (data[0] == 'u' )) {
-    servo2b.write(0);
+    servo2b.writeMicroseconds(500);
   } else if ((data[0] == 'L') || (data[0] == 'l' )) {
-    servo2f.write(170);
+    servo2f.writeMicroseconds(2500);
     delay(500);
-    servo2b.write(0);
+    servo2b.writeMicroseconds(500);
     delay(500);
     servo2f.writeMicroseconds(1500);
     delay(500);
-    servo2b.write(100);
+    servo2b.writeMicroseconds(1500);
   } else if ((data[0] == 'Z') || (data[0] == 'z' )) {
     //all servos 
     servo1f.writeMicroseconds(1500);
@@ -139,71 +139,71 @@ void setServoCommand(char* data) {
 void setServo(char* data) {
   if ((data[0] == 'L') || (data[0] == 'l')) {
     if (data[1] == '+') {
-      servo2f.write(170);
+      servo2f.writeMicroseconds(2500);
       delay(1000);
-      servo2b.write(0);
+      servo2b.writeMicroseconds(500);
       delay(1000);
       servo2f.writeMicroseconds(1500);
       delay(1000);
-      servo2b.write(100);
+      servo2b.writeMicroseconds(1500);
     } else if (data[1] == '-') {
-      servo2f.write(5);
+      servo2f.writeMicroseconds(500);
       delay(1000);
-      servo2b.write(0);
+      servo2b.writeMicroseconds(500);
       delay(1000);
       servo2f.writeMicroseconds(1500);
       delay(1000);
-      servo2b.write(100);
+      servo2b.writeMicroseconds(1500);
     } else if (data[1] == '2') {
-      servo2f.write(10);
+      servo2f.writeMicroseconds(500);
       delay(1000);
-      servo2b.write(0);
+      servo2b.writeMicroseconds(500);
       delay(1000);
       servo2f.writeMicroseconds(1500);
       delay(1000);
-      servo2b.write(100);
+      servo2b.writeMicroseconds(1500);
       delay(1000);
-      servo2f.write(10);
+      servo2f.writeMicroseconds(500);
       delay(1000);
-      servo2b.write(0);
+      servo2b.writeMicroseconds(500);
       delay(1000);
-      servo2f.write(84);
+      servo2f.writeMicroseconds(1500);
       delay(1000);
-      servo2b.write(100);
+      servo2b.writeMicroseconds(1500);
     }
   } else if ((data[0] == 'R') || (data[0] == 'r')) {
     if (data[1] == '+') {
-      servo4f.write(173);
+      servo4f.writeMicroseconds(2500);
       delay(1000);
-      servo4b.write(0);
+      servo4b.writeMicroseconds(500);
       delay(1000);
-      servo4f.write(90);
+      servo4f.writeMicroseconds(1500);
       delay(1000);
-      servo4b.write(100);
+      servo4b.writeMicroseconds(1500);
     } else if (data[1] == '-') {
-      servo4f.write(10);
+      servo4f.writeMicroseconds(500);
       delay(1000);
-      servo4b.write(0);
+      servo4b.writeMicroseconds(500);
       delay(1000);
-      servo4f.write(90);
+      servo4f.writeMicroseconds(1500);
       delay(1000);
-      servo4b.write(100);
+      servo4b.writeMicroseconds(1500);
     } else if (data[1] == '2') {
-      servo4f.write(10);
+      servo4f.writeMicroseconds(500);
       delay(1000);
-      servo4b.write(0);
+      servo4b.writeMicroseconds(500);
       delay(1000);
-      servo4f.write(90);
+      servo4f.writeMicroseconds(1500);
       delay(1000);
-      servo4b.write(100);
+      servo4b.writeMicroseconds(1500);
       delay(1000);
-      servo4f.write(10);
+      servo4f.writeMicroseconds(500);
       delay(1000);
-      servo4b.write(0);
+      servo4b.writeMicroseconds(500);
       delay(1000);
-      servo4f.write(90);
+      servo4f.writeMicroseconds(1500);
       delay(1000);
-      servo4b.write(100);
+      servo4b.writeMicroseconds(1500);
     }
   } else if ((data[0] == 'U') || (data[0] == 'u')) {
     //r- l+
@@ -248,71 +248,71 @@ void setServo(char* data) {
     }
   } else if ((data[0] == 'F') || (data[0] == 'f')) {
     if (data[1] == '+') {
-      servo1f.write(180);
+      servo1f.writeMicroseconds(2500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
     } else if (data[1] == '-') {
-      servo1f.write(10);
+      servo1f.writeMicroseconds(500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
     } else if (data[1] == '2') {
-      servo1f.write(10);
+      servo1f.writeMicroseconds(500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
       delay(1000);
-      servo1f.write(10);
+      servo1f.writeMicroseconds(500);
       delay(1000);
-      servo1b.write(0);
+      servo1b.writeMicroseconds(500);
       delay(1000);
-      servo1f.write(90);
+      servo1f.writeMicroseconds(1500);
       delay(1000);
-      servo1b.write(100);
+      servo1b.writeMicroseconds(1500);
     }
   } else if ((data[0] == 'B') || (data[0] == 'b')) {
    if (data[1] == '+') {
-      servo3f.write(175);
+      servo3f.writeMicroseconds(2500);
       delay(1000);
-      servo3b.write(0);
+      servo3b.writeMicroseconds(500);
       delay(1000);
-      servo3f.write(90);
+      servo3f.writeMicroseconds(1500);
       delay(1000);
-      servo3b.write(100);
+      servo3b.writeMicroseconds(1500);
     } else if (data[1] == '-') {
-      servo3f.write(10);
+      servo3f.writeMicroseconds(500);
       delay(1000);
-      servo3b.write(0);
+      servo3b.writeMicroseconds(500);
       delay(1000);
-      servo3f.write(90);
+      servo3f.writeMicroseconds(1500);
       delay(1000);
-      servo3b.write(100);
+      servo3b.writeMicroseconds(1500);
     } else if (data[1] == '2') {
-      servo3f.write(10);
+      servo3f.writeMicroseconds(500);
       delay(1000);
-      servo3b.write(0);
+      servo3b.writeMicroseconds(500);
       delay(1000);
-      servo3f.write(90);
+      servo3f.writeMicroseconds(1500);
       delay(1000);
-      servo3b.write(100);
+      servo3b.writeMicroseconds(1500);
       delay(1000);
-      servo3f.write(10);
+      servo3f.writeMicroseconds(500);
       delay(1000);
-      servo3b.write(0);
+      servo3b.writeMicroseconds(500);
       delay(1000);
-      servo3f.write(90);
+      servo3f.writeMicroseconds(1500);
       delay(1000);
-      servo3b.write(100);
+      servo3b.writeMicroseconds(1500);
     }
   } else if ((data[0] == 'D') || (data[0] == 'd')) {
     //r- l+
