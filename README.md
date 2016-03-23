@@ -4,7 +4,10 @@
 
 ![在博创杯决赛上的照片](picture/20150725.jpg)
 
-视频地址在[Youtube](https://www.youtube.com/watch?v=wW4ma2hvvAI)
+视频地址在
+[Youtube](https://www.youtube.com/watch?v=wW4ma2hvvAI)
+
+[优酷](http://v.youku.com/v_show/id_XMTQ1NjExMTk3Mg==.html)
 
 ###功能
 
@@ -27,4 +30,4 @@ Apache
 
 Android客户端部分：
 
-[Material-Tab]()
+[Material-Tab](https://github.com/neokree/MaterialTabs)
