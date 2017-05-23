@@ -1,6 +1,8 @@
-##解魔方机器人
+## 解魔方机器人
 
-###预览
+### 预览
+
+在博创杯决赛上的照片：
 
 ![在博创杯决赛上的照片](picture/20150725.jpg)
 
@@ -9,24 +11,27 @@
 
 [优酷](http://v.youku.com/v_show/id_XMTQ1NjExMTk3Mg==.html)
 
-###功能
+[Bilibili](http://www.bilibili.com/video/av6760518/)
+
+### 功能
 
 使用arduino主控
 
-###构建
+### 构建
 
-####android客户端
+#### android客户端
 使用android-ui，materialTab等
 
-####arduino控制端
+#### arduino控制端
 
-###部分文档
+### 部分文档
 
 [个人博客](http://dbqf.xyz)
 
-###协议
+### 协议
 Apache 
-###致谢
+
+### 致谢
 
 Android客户端部分：
 
