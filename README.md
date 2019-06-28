@@ -32,3 +32,7 @@ Apache
 Android client section：
 
 [Material-Tab](https://github.com/neokree/MaterialTabs)
+
+### partner Blog
+
+[Personal blog](http://dbqf.xyz)
